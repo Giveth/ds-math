@@ -1,6 +1,6 @@
 /// math.sol -- mixin for inline numerical wizardry
 
-// Copyright (C) 2015, 2016, 2017 Dapphub LLC
+// Copyright (C) 2015, 2016, 2017 Dapphub, LLC
 
 // Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
@@ -12,12 +12,13 @@
 // Thank you to @zandy and the Dappsys team for writing this beautiful library
 // This library was modified to reorder and rename the functions and many
 // comments were added for clarification.
-// See their library here: https://github.com/dapphub/ds-math
+// See their original library here: https://github.com/dapphub/ds-math
 //
-// Also the OpenZepplin team deserves gratitude for making their own beautiful
-// library which has been very well utilized in solidity contracts across the
-// Ethereum ecosystem and inspired the multiply() and divide() functions.
-// See their library here: https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/SafeMath.sol
+// Also the OpenZepplin team deserves gratitude and recognition for making
+// their own beautiful library which has been very well utilized in solidity
+// contracts across the Ethereum ecosystem and inspired the multiply() and
+// divide() functions. See their library here:
+// https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/SafeMath.sol
 
 pragma solidity ^0.4.10;
 
@@ -39,17 +40,17 @@ contract SafeMath {
 
     // ensure that the result of multiplying x and y is valid 
     function multiply(uint x, uint y) internal returns (uint) {
-        uint c = a * b;
-        assert(a == 0 || c / a == b);
-        return c;
+        uint z = x * y;
+        assert(x == 0 || z / x == y);
+        return z;
     }
 
     // ensure that the result of dividing x and y is valid 
     function divide(uint x, uint y) internal returns (uint) {
-        assert(b > 0);
-        uint c = a / b;
-        assert(a == b * c + a % b);
-        return c;
+        assert(y > 0);
+        uint z = x / y;
+        assert(x == y * z + x % y);
+        return z;
     }
 
     // return the minimum of two values
@@ -62,14 +63,6 @@ contract SafeMath {
         return (x >= y) ? x : y;
     }
 
-    // return the minimum of two values
-    function min(uint128 x, uint128 y) constant internal returns (uint128 z) {
-        return (x <= y) ? x : y;
-    }
-    // return the maximum of two values
-    function max(uint128 x, uint128 y) constant internal returns (uint128 z) {
-        return (x >= y) ? x : y;
-    }
     // helper function
     function assert(bool assertion) internal {
         if (!assertion) {
@@ -129,6 +122,7 @@ contract SafeMath {
     }
 
     // ensures that `x` to the `n` power is returned and is precise to 36 digits
+    // using a for loop which multiplies `x` by itself `n` times 
     function safeBP36Power(uint128 x, uint64 n) constant returns (uint128 z) {
         // if n is an odd number, 
         // z = x, 
