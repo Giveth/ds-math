@@ -23,17 +23,17 @@ pragma solidity ^0.4.10;
 contract SafeMath {
 
     // ensure that the result of adding x and y is accurate 
-    function add(uint x, uint y) internal returns (uint z) {
+    function add(uint x, uint y) internal constant returns (uint z) {
         assert( (z = x + y) >= x);
     }
  
     // ensure that the result of subtracting x and y is accurate 
-    function subtract(uint x, uint y) internal returns (uint z) {
+    function subtract(uint x, uint y) internal constant returns (uint z) {
         assert( (z = x - y) <= x);
     }
 
     // ensure that the result of multiplying x and y is accurate 
-    function multiply(uint x, uint y) internal returns (uint z) {
+    function multiply(uint x, uint y) internal constant returns (uint z) {
         uint z = x * y;
         assert(x == 0 || z / x == y);
         return z;
@@ -41,7 +41,7 @@ contract SafeMath {
 
     // ensure that the result of dividing x and y is accurate
     // note: Solidity now throws on division by zero, so a check is not needed
-    function divide(uint x, uint y) internal returns (uint z) {
+    function divide(uint x, uint y) internal constant returns (uint z) {
         uint z = x / y;
         assert(x == ( (y * z) + (x % y) ));
         return z;
