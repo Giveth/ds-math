@@ -62,12 +62,12 @@ contract SafeMath {
       return a >= b ? a : b;
     }
 
-    // return the minimum of two values
+    // return the lowest of two values
     function min(uint x, uint y) internal constant returns (uint) {
         return (x <= y) ? x : y;
     }
 
-    // return the maximum of two values
+    // return the largest of two values
     function max(uint x, uint y) internal constant returns (uint) {
         return (x >= y) ? x : y;
     }
