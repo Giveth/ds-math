@@ -34,7 +34,7 @@ contract SafeMath {
 
     // ensure that the result of multiplying x and y is accurate 
     function multiply(uint x, uint y) internal constant returns (uint z) {
-        uint z = x * y;
+        z = x * y;
         assert(x == 0 || z / x == y);
         return z;
     }
@@ -42,7 +42,7 @@ contract SafeMath {
     // ensure that the result of dividing x and y is accurate
     // note: Solidity now throws on division by zero, so a check is not needed
     function divide(uint x, uint y) internal constant returns (uint z) {
-        uint z = x / y;
+        z = x / y;
         assert(x == ( (y * z) + (x % y) ));
         return z;
     }
