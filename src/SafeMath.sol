@@ -14,8 +14,8 @@
 //
 // Also the OpenZepplin team deserves gratitude and recognition for making
 // their own beautiful library which has been very well utilized in solidity
-// contracts across the Ethereum ecosystem and inspired the multiply() and
-// divide() functions. See their library here:
+// contracts across the Ethereum ecosystem and we used their max64(), min64(),
+// multiply(), and divide() functions. See their library here:
 // https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/SafeMath.sol
 
 pragma solidity ^0.4.10;
@@ -48,13 +48,13 @@ contract SafeMath {
     }
     
     // return the lowest of two 64 bit integers
-    function min64(uint64 a, uint64 b) internal constant returns (uint64) {
-      return a < b ? a : b;
+    function min64(uint64 x, uint64 y) internal constant returns (uint64) {
+      return x < y ? x: y;
     }
     
     // return the largest of two 64 bit integers
-    function max64(uint64 a, uint64 b) internal constant returns (uint64) {
-      return a >= b ? a : b;
+    function max64(uint64 x, uint64 y) internal constant returns (uint64) {
+      return x >= y ? x : y;
     }
 
     // return the lowest of two values
