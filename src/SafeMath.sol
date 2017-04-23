@@ -27,7 +27,7 @@ contract SafeMath {
         assert( (z = x + y) >= x);
     }
  
-    // ensure that the result of subtracting x and y is accurate 
+    // ensure that the result of subtracting y from x is accurate 
     function subtract(uint x, uint y) internal constant returns (uint z) {
         assert( (z = x - y) <= x);
     }
@@ -46,11 +46,13 @@ contract SafeMath {
         assert(x == ( (y * z) + (x % y) ));
         return z;
     }
-    // return the lowest of two 64 bit ints
+    
+    // return the lowest of two 64 bit integers
     function min64(uint64 a, uint64 b) internal constant returns (uint64) {
       return a < b ? a : b;
     }
-    // return the largest of two 64 bit ints
+    
+    // return the largest of two 64 bit integers
     function max64(uint64 a, uint64 b) internal constant returns (uint64) {
       return a >= b ? a : b;
     }
