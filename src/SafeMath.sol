@@ -18,7 +18,7 @@
 // multiply(), and divide() functions. See their library here:
 // https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/SafeMath.sol
 
-pragma solidity ^0.4.10;
+pragma solidity ^0.4.6;
 
 contract SafeMath {
 
@@ -65,6 +65,12 @@ contract SafeMath {
     // return the largest of two values
     function max(uint x, uint y) internal constant returns (uint) {
         return (x >= y) ? x : y;
+    }
+
+    function assert(bool assertion) internal {
+        if (!assertion) {
+            throw;
+        }
     }
 
 }
