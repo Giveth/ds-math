@@ -47,22 +47,26 @@ contract SafeMath {
         return z;
     }
     
-    // return the lowest of two 64 bit integers
+    // return the lowest of two 64 bit integers, this conforms to the expected
+    //  OpenZepplin standard of using `<` for min and `>=` for max
     function min64(uint64 x, uint64 y) internal constant returns (uint64) {
       return x < y ? x: y;
     }
     
-    // return the largest of two 64 bit integers
+    // return the largest of two 64 bit integers, this conforms to the expected
+    //  OpenZepplin standard of using `<` for min and `>=` for max
     function max64(uint64 x, uint64 y) internal constant returns (uint64) {
       return x >= y ? x : y;
     }
 
-    // return the lowest of two values
+    // return the lowest of two values, this conforms to the expected
+    //  DappHub standard of using `<=` for min and `>=` for max
     function min(uint x, uint y) internal constant returns (uint) {
         return (x <= y) ? x : y;
     }
 
-    // return the largest of two values
+    // return the largest of two values, this conforms to the expected
+    //  DappHub standard of using `<=` for min and `>=` for max
     function max(uint x, uint y) internal constant returns (uint) {
         return (x >= y) ? x : y;
     }
