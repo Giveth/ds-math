@@ -17,6 +17,7 @@
 // contracts across the Ethereum ecosystem and we used their max64(), min64(),
 // multiply(), and divide() functions. See their library here:
 // https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/SafeMath.sol
+// and see their MIT license in this directory under `OpenZeppelin License`
 
 pragma solidity ^0.4.6;
 
